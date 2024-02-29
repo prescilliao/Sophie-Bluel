@@ -4,6 +4,7 @@ const BoutonTous = document.getElementById("boutonAll");
 const Boutonobjets = document.getElementById("boutonobjets");
 const BoutonAppartement = document.getElementById("boutonrappartements");
 const Boutonhotel = document.getElementById("boutonhotel");
+const GreenBouton = document.querySelectorAll(".styleboutton");
 
 // fonction qui permet de recupérer les données des projets et les affiches
 function All() {
@@ -22,8 +23,9 @@ function All() {
 }
 All();
 
-BoutonTous.addEventListener("click", () => {
+BoutonTous.addEventListener("click", (e) => {
   All();
+  ActiveBouton(e);
 });
 
 // fonction qui permet de recupérer
@@ -53,8 +55,9 @@ function Objet() {
 }
 
 //  au click joue la fonction Objet
-Boutonobjets.addEventListener("click", () => {
+Boutonobjets.addEventListener("click", (e) => {
   Objet();
+  ActiveBouton(e);
 });
 
 function appartement() {
@@ -75,8 +78,9 @@ function appartement() {
     });
 }
 
-BoutonAppartement.addEventListener("click", () => {
+BoutonAppartement.addEventListener("click", (e) => {
   appartement();
+  ActiveBouton(e);
 });
 
 function hotel() {
@@ -97,6 +101,19 @@ function hotel() {
     });
 }
 
-Boutonhotel.addEventListener("click", () => {
+Boutonhotel.addEventListener("click", (e) => {
   hotel();
+  ActiveBouton(e);
 });
+
+// ajout de la class colorbutton sur Tous pour effet par defaut
+BoutonTous.classList.add("colorbutton");
+// focntion qui permet d'allumer les boutons en fonction du bouton selectionner
+function ActiveBouton(e) {
+  GreenBouton.forEach((select) => {
+    select.classList.remove("colorbutton");
+  });
+  //  btn = informations qui permet de savoir quel element est selectionner
+  const btn = e.target;
+  btn.classList.add("colorbutton");
+}
