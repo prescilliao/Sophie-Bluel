@@ -262,35 +262,3 @@ footer nav ul {
   justify-content: flex-end;
   margin: 2em;
 }
-
-/* design des boutons */
-.boxbouton {
-  margin: auto;
-  margin-bottom: 50px;
-  display: flex;
-  justify-content: space-between;
-  width: 585px;
-  height: 38px;
-}
-
-.styleboutton {
-  font-family: "Syne";
-  border: rgba(29, 97, 84, 1) 1px solid;
-  border-radius: 60px;
-  color: rgba(29, 97, 84, 1);
-  background-color: white;
-}
-
-#boutonAll,
-#boutonobjets {
-  padding: 0px 25px;
-}
-#boutonrappartements,
-#boutonhotel {
-  padding: 0px 5px;
-}
-
-.colorbutton {
-  background-color: rgba(29, 97, 84, 1);
-  color: white;
-}
