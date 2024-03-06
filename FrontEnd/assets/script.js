@@ -21,3 +21,36 @@ fetch("http://localhost:5678/api/works")
       Projet.appendChild(Titre);
     });
   });
+
+// recuperation de la div ou il y aura les boutons du filtre
+const BoutonBox = document.querySelector(".containerbouton");
+
+// creation du bouton Tous
+const BoutonTous = document.createElement("button");
+BoutonTous.innerHTML = "Tous";
+BoutonTous.classList.add("style");
+BoutonTous.classList.add("paddingOne");
+
+// creation du bouton Objets
+const BoutonObjet = document.createElement("button");
+BoutonObjet.innerHTML = "Objets";
+BoutonObjet.classList.add("style");
+BoutonObjet.classList.add("paddingOne");
+
+// cration du bouton Appartement
+const BoutonAppartement = document.createElement("button");
+BoutonAppartement.innerHTML = "Appartements";
+BoutonAppartement.classList.add("style");
+BoutonAppartement.classList.add("paddingTwo");
+
+// creation du bouton Hotel et restaurant
+const BoutonHotelRestaurant = document.createElement("button");
+BoutonHotelRestaurant.innerHTML = "Hotels & restaurants";
+BoutonHotelRestaurant.classList.add("style");
+BoutonHotelRestaurant.classList.add("paddingTwo");
+
+// ajout des boutons dans la div
+BoutonBox.appendChild(BoutonTous);
+BoutonBox.appendChild(BoutonObjet);
+BoutonBox.appendChild(BoutonAppartement);
+BoutonBox.appendChild(BoutonHotelRestaurant);
