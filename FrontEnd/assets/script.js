@@ -73,11 +73,3 @@ BoutonBox.appendChild(BoutonAppartement);
 BoutonBox.appendChild(BoutonHotelRestaurant);
 
 // filtrage en fonction des categories/id
-
-function Filtre() {
-  fetch("http://localhost:5678/api/works")
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {});
-}
