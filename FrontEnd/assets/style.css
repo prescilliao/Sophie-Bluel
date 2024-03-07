@@ -289,3 +289,25 @@ footer nav ul {
 .paddingTwo {
   padding: 5px 10px;
 }
+
+.forget {
+  margin: auto;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Work Sans";
+  color: rgba(61, 61, 61, 1);
+  border-bottom: 1px solid rgba(61, 61, 61, 1);
+  width: max-content;
+}
+
+.decoration {
+  text-decoration: none;
+  color: black;
+}
+.decoration:hover {
+  color: #b1663c;
+}
+
+#login {
+  font-weight: 600;
+}
