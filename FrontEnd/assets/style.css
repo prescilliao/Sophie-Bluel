@@ -280,14 +280,12 @@ footer nav ul {
   font-weight: 700;
   font-size: 16px;
   align-items: center;
-}
-
-.paddingOne {
   padding: 5px 15px;
 }
 
-.paddingTwo {
-  padding: 5px 10px;
+.fullbutton {
+  color: white;
+  background-color: rgba(29, 97, 84, 1);
 }
 
 .forget {
@@ -310,4 +308,9 @@ footer nav ul {
 
 #login {
   font-weight: 600;
+}
+
+.size {
+  margin-top: 100px;
+  height: 600px;
 }
