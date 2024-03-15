@@ -1,3 +1,4 @@
+const token = localStorage.getItem("accessToken");
 // creation d'un tableau qui va etre utile par la suite
 let works = [];
 // creation d'un tableau avec une categorie par defaut
@@ -20,7 +21,9 @@ fetch("http://localhost:5678/api/works")
       }
     });
     createWorks(works);
-    createFilterButton(categories);
+    if (!token) {
+      createFilterButton(categories);
+    }
   });
 
 // fonction qui permet de structurer chaque element du tableau works
@@ -47,12 +50,28 @@ function createFilterButton(categories) {
     const Bouton = document.createElement("button");
     Bouton.innerHTML = categorie;
     Bouton.classList.add("style");
+    Bouton.classList.add("filterbutton");
+    if (categorie === "Tous") {
+      Bouton.classList.add("fullbutton");
+    }
     BoutonBox.appendChild(Bouton);
     Bouton.addEventListener("click", () => {
-      Bouton.classList.add("fullbutton");
       createWorksFiltered(categorie);
+      addFocusColor(Bouton);
     });
   });
+}
+
+function addFocusColor(buttonClique) {
+  // retirer la classe fullbutton de tous les boutons
+  //recuperer tous les element boutton
+  //parcourri tous les boutons et retirer la classe fullbutton
+  const buttons = document.querySelectorAll(".filterbutton");
+  buttons.forEach((button) => {
+    button.classList.remove("fullbutton");
+  });
+  //ajouter la couleur de focus au bouton cliqué
+  buttonClique.classList.add("fullbutton");
 }
 
 // fonction qui permet de filtrer les elements du tableau works en foncton de leur
@@ -66,7 +85,3 @@ function createWorksFiltered(categorieName) {
   });
   createWorks(filtredWork);
 }
-
-// compte de Sophie
-// email: sophie.bluel@test.tld
-// password: S0phie

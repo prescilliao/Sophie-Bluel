@@ -1,10 +1,14 @@
+// compte de Sophie
+// email: sophie.bluel@test.tld
+// password: S0phie
+
+// console.log(document.getElementById("email").value);
+// console.log(document.getElementById("password").value);
+
 btnConnect.addEventListener("click", function (e) {
+  // desactiver le raffraichissement de la page et le chanmement d'url
   e.preventDefault();
-  //a toi de gerer la connexion
-  //recuperer les valeur des champs
-  console.log(document.getElementById("email").value);
-  console.log(document.getElementById("password").value);
-  //envoyer les valeurs au serveur
+  // methode post
   fetch("http://localhost:5678/api/users/login", {
     method: "POST",
     headers: {
@@ -19,10 +23,19 @@ btnConnect.addEventListener("click", function (e) {
     .then((response) => {
       if (response.status === 200) {
         return response.json();
+        // afficher un message d'erreur si infos saisies fausses
+      } else {
+        // ajout d'un message d'erreur
+        const MessageErreur = document.querySelector(".erreur");
+        MessageErreur.textContent = "Email ou Mot de Passe incorrect";
+        MessageErreur.classList.add("erreur");
+        // lancer nouvelle erreur
+        throw new Error("Email ou Mot de Passe incorrect");
       }
-      alert("Utilisateur ou mdp incorrect");
     })
+    // redirection vers indexedDB.html + stockage du token
     .then((data) => {
-      console.log(data);
+      localStorage.setItem("accessToken", data.token);
+      window.location.href = "./index.html";
     });
 });
