@@ -74,6 +74,14 @@ if (token) {
     const popup2 = document.querySelector(".modale2");
     popup2.classList.remove("hidden");
   });
-}
 
-//quand on clique sur la fleche retour afficher popup1
+  //quand on clique sur la fleche retour afficher popup1
+  const returnModale = document.getElementById("ArrowLeft");
+  returnModale.addEventListener("click", (e) => {
+    e.preventDefault();
+    const popup2 = document.querySelector(".modale2");
+    popup2.classList.add("hidden");
+    const popup1 = document.querySelector(".modale1");
+    popup1.classList.remove("hidden");
+  });
+}
