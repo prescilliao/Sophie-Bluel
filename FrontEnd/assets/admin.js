@@ -19,6 +19,7 @@ if (token) {
       const figure = document.createElement("figure");
       const icone = document.createElement("i");
       const img = document.createElement("img");
+      figure.classList.add("position");
       icone.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
       icone.classList.add("trash_icone");
       img.src = work.imageUrl;
