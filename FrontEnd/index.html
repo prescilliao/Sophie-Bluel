@@ -11,13 +11,21 @@
       rel="stylesheet"
     />
     <meta name="description" content="" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./assets/style.css" />
     <script src="./assets/script.js" defer></script>
     <script src="./assets/admin.js" defer></script>
   </head>
   <body>
     <div class="admin barreAdmin hidden">
-      <p><i class="fa-regular fa-pen-to-square"></i>Mode édition</p>
+      <i class="fa-regular fa-pen-to-square"></i>
+      <p>Mode édition</p>
     </div>
     <header>
       <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
@@ -55,11 +63,12 @@
         </article>
       </section>
       <section id="portfolio">
-        <h2>
+        <h2 class="organisation">
           Mes Projets
           <div class="admin hidden">
-            <i class="fa-regular fa-pen-to-square"></i>
-            <p class="edit">modifier</p>
+            <p class="edit">
+              <i class="fa-regular fa-pen-to-square"></i>modifier
+            </p>
           </div>
         </h2>
         <div class="containerbouton"></div>
@@ -96,27 +105,35 @@
     <aside class="modale modale1 hidden">
       <div class="modale-content">
         <span class="close">&times;</span>
-        <p>Galerie photo</p>
+        <p class="title">Galerie photo</p>
         <div class="miniGallery"></div>
         <button class="AddPictureModale">Ajouter une photo</button>
       </div>
     </aside>
 
-    <aside class="modale2 modale hidden">
+    <aside class="modale modale2 hidden">
       <div class="modale-content">
+        <span><i class="fa-solid fa-arrow-left return"></i></span>
         <span class="close">&times;</span>
-        <h2>Modifier le contenu 2</h2>
-        <form action="#" method="post">
+        <p class="title">Ajout photo</p>
+        <div class="add">
+          <i class="fa-regular fa-image"></i>
+          <label class="boutonpicture" for="addpicture"> + Ajouter photo</label>
+          <input
+            type="file"
+            id="addpicture"
+            name="addpicture"
+            accept="image/png, image/jpg"
+            size="4mo"
+          />
+          <p class="txt">jpg, png : 4mo max</p>
+        </div>
+        <form class="ajout" action="#" method="post">
           <label for="titre">Titre</label>
           <input type="text" name="titre" id="titre" />
-          <label for="description">Description</label>
-          <textarea
-            name="description"
-            id="description"
-            cols="30"
-            rows="10"
-          ></textarea>
-          <input type="submit" value="Envoyer" />
+          <label for="categorie">Catégorie</label>
+          <input type="text" name="Catégorie" id="catégorie" />
+          <input type="submit" value="Valider" />
         </form>
       </div>
     </aside>

@@ -4,24 +4,31 @@ if (token) {
   logout.innerText = "logout";
   const elementAdmin = document.querySelectorAll(".admin");
 
-  //prepare contenu popu1
+  //prepare contenu popup1
 
   function openModale(modale) {
+    // enleve class hidden
     modale.classList.remove("hidden");
     const popup1MiniGallery = document.querySelector(
       ".modale1 .modale-content .miniGallery"
     );
+    // enleve ce quil y a dans
     popup1MiniGallery.innerHTML = "";
+    // pour tout les elements dans la minigalerie
     works.forEach((work) => {
       const figure = document.createElement("figure");
+      const icone = document.createElement("i");
       const img = document.createElement("img");
+      icone.innerHTML = `<i class="fa-solid fa-trash-can"></i>`;
+      icone.classList.add("trash_icone");
       img.src = work.imageUrl;
       figure.appendChild(img);
+      figure.appendChild(icone);
       popup1MiniGallery.appendChild(figure);
     });
   }
 
-  //prepare contenu popu2
+  //prepare contenu popup2
 
   elementAdmin.forEach((el) => {
     el.classList.remove("hidden");
@@ -54,8 +61,8 @@ if (token) {
   // quand on clique sur un une corbeille supprimer un element
 
   //appel a l'api
-  ///si api di ok on supprine
-  //supprimer elemenr dans la mini galerie et dans la galerie globale
+  ///si api di ok on supprime
+  //supprimer element dans la mini galerie et dans la galerie globale
   //sinon erreur
 
   // quand on clique sur ajouter une photo afficher popup 2
@@ -67,5 +74,6 @@ if (token) {
     const popup2 = document.querySelector(".modale2");
     popup2.classList.remove("hidden");
   });
-  //quand on clique sur la fleche retour afficher popup1
 }
+
+//quand on clique sur la fleche retour afficher popup1
