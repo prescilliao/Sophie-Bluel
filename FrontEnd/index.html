@@ -101,7 +101,7 @@
         </ul>
       </nav>
     </footer>
-
+    <!-- modale / popup 1 : minigallerie  -->
     <aside class="modale modale1 hidden">
       <div class="modale-content">
         <span class="close">&times;</span>
@@ -110,7 +110,7 @@
         <button class="AddPictureModale StyleAjout">Ajouter une photo</button>
       </div>
     </aside>
-
+    <!-- modale /popup 2 : formulaire ajout photo  -->
     <aside class="modale modale2 hidden">
       <div class="modale-content">
         <span
@@ -118,9 +118,11 @@
         ></span>
         <span class="close">&times;</span>
         <p class="title">Ajout photo</p>
-        <div class="add">
-          <i class="fa-regular fa-image"></i>
-          <label class="boutonpicture" for="addpicture"> + Ajouter photo</label>
+        <div class="add" id="enteteImage">
+          <i class="fa-regular fa-image" id="iconeLogo"></i>
+          <label id="photoAjouter" class="boutonpicture" for="addpicture">
+            + Ajouter photo</label
+          >
           <input
             type="file"
             id="addpicture"
@@ -132,11 +134,16 @@
         </div>
         <form class="ajout" action="#" method="post">
           <label for="titre">Titre</label>
-          <input type="text" name="titre" id="titre" />
+          <input class="designInput" type="text" name="titre" id="titre" />
           <label for="categorie">Catégorie</label>
-          <input type="text" name="Catégorie" id="catégorie" />
+          <select class="designInput" id="categorie" name="categorie">
+            <option value="Tous"><!--Choisir une catégorie--></option>
+            <option value="Objets">Objets</option>
+            <option value="Appartements">Appartements</option>
+            <option value="Hotels & Restaurants">Hotels & Restaurants</option>
+          </select>
           <span class="border"></span>
-          <input id="check" type="submit" value="Valider" />
+          <input class="designInput" id="check" type="submit" value="Valider" />
         </form>
       </div>
     </aside>

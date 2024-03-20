@@ -2,9 +2,7 @@
 // email: sophie.bluel@test.tld
 // password: S0phie
 
-// console.log(document.getElementById("email").value);
-// console.log(document.getElementById("password").value);
-
+// au click sur le bouton se connecter
 btnConnect.addEventListener("click", function (e) {
   // desactiver le raffraichissement de la page et le chanmement d'url
   e.preventDefault();
@@ -15,6 +13,7 @@ btnConnect.addEventListener("click", function (e) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      // recuperation des champs email et mdp
       email: document.getElementById("email").value,
       password: document.getElementById("password").value,
     }),
@@ -23,7 +22,6 @@ btnConnect.addEventListener("click", function (e) {
     .then((response) => {
       if (response.status === 200) {
         return response.json();
-        // afficher un message d'erreur si infos saisies fausses
       } else {
         // ajout d'un message d'erreur
         const MessageErreur = document.querySelector(".erreur");
@@ -33,7 +31,7 @@ btnConnect.addEventListener("click", function (e) {
         throw new Error("Email ou Mot de Passe incorrect");
       }
     })
-    // redirection vers indexedDB.html + stockage du token
+    // redirection vers index.html + stockage du token
     .then((data) => {
       localStorage.setItem("accessToken", data.token);
       window.location.href = "./index.html";
