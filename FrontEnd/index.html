@@ -101,6 +101,7 @@
         </ul>
       </nav>
     </footer>
+
     <!-- modale / popup 1 : minigallerie  -->
     <aside class="modale modale1 hidden">
       <div class="modale-content">
@@ -110,40 +111,49 @@
         <button class="AddPictureModale StyleAjout">Ajouter une photo</button>
       </div>
     </aside>
+
     <!-- modale /popup 2 : formulaire ajout photo  -->
     <aside class="modale modale2 hidden">
       <div class="modale-content">
-        <span
-          ><i class="fa-solid fa-arrow-left return" id="ArrowLeft"></i
-        ></span>
-        <span class="close">&times;</span>
-        <p class="title">Ajout photo</p>
-        <div class="add" id="enteteImage">
-          <i class="fa-regular fa-image" id="iconeLogo"></i>
-          <label id="photoAjouter" class="boutonpicture" for="addpicture">
-            + Ajouter photo</label
-          >
-          <input
-            type="file"
-            id="addpicture"
-            name="addpicture"
-            accept="image/png, image/jpg"
-            size="4mo"
-          />
-          <p class="txt">jpg, png : 4mo max</p>
-        </div>
-        <form class="ajout" action="#" method="post">
+        <form
+          action="#"
+          method="post"
+          id="formAddPicture"
+          enctype="multipart/form-data"
+        >
+          <span
+            ><i class="fa-solid fa-arrow-left return" id="ArrowLeft"></i
+          ></span>
+          <span class="close">&times;</span>
+          <p class="title">Ajout photo</p>
+          <div class="add" id="enteteImage">
+            <i class="fa-regular fa-image" id="iconeLogo"></i>
+            <label id="photoAjouter" class="boutonpicture" for="addpicture">
+              + Ajouter photo</label
+            >
+            <input
+              type="file"
+              id="addpicture"
+              name="addpicture"
+              accept="image/png, image/jpg"
+              size="4mo"
+            />
+            <p class="txt">jpg, png : 4mo max</p>
+          </div>
+          <div class="add hidden" id="showPicture"></div>
+
           <label for="titre">Titre</label>
           <input class="designInput" type="text" name="titre" id="titre" />
           <label for="categorie">Catégorie</label>
-          <select class="designInput" id="categorie" name="categorie">
-            <option value="Tous"><!--Choisir une catégorie--></option>
-            <option value="Objets">Objets</option>
-            <option value="Appartements">Appartements</option>
-            <option value="Hotels & Restaurants">Hotels & Restaurants</option>
-          </select>
+          <select class="designInput" id="categorie" name="categorie"></select>
           <span class="border"></span>
-          <input class="designInput" id="check" type="submit" value="Valider" />
+          <input
+            class="designInput disabled"
+            id="check"
+            type="submit"
+            value="Valider"
+            disabled
+          />
         </form>
       </div>
     </aside>
