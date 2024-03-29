@@ -59,7 +59,6 @@ if (token) {
             Authorization: `Bearer ${token}`,
           },
         }).then((response) => {
-          console.log(response);
           // si response a status 204
           if (response.status === 204) {
             // filtrer les projets
@@ -117,7 +116,6 @@ if (token) {
   const modaleBackgroud = document.querySelectorAll(".modale");
   modaleBackgroud.forEach((modale) => {
     modale.addEventListener("click", (e) => {
-      e.preventDefault();
       if (e.target === modale) {
         closeModale();
       }
