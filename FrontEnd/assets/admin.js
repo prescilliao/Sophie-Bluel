@@ -70,7 +70,6 @@ if (token) {
           if (response.status !== 204) {
             alert("Une erreur s'est produite lors de la supression");
           }
-          //TODO
         });
       });
       img.src = work.imageUrl;
@@ -211,10 +210,9 @@ if (token) {
           return response.json();
         }
         //sinon afficher une erreur
-        else {
-          alert("erreur");
+        if (response.status !== 201) {
+          alert("Erreur, veuillez vérifier les champs saisis");
         }
-        //TODO
       })
       .then((data) => {
         //ajouter l'image dans les deux galeries
